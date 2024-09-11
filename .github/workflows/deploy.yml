@@ -25,7 +25,7 @@ jobs:
       - name: Build and push Docker image
         run: |
           docker buildx create --use
-          docker buildx build --platform linux/arm64 -t ${{ secrets.DOCKER_USERNAME }}/tools_service:latest --push .
+          docker buildx build -t ${{ secrets.DOCKER_USERNAME }}/tools_service:latest --push .
 
       - name: Deploy to server
         uses: appleboy/ssh-action@v0.1.3
